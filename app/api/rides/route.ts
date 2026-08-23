@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getGuest, requireGuest } from '@/db/auth';
+import { requireGuest } from '@/db/auth';
 import { getDatabase } from '@/db/database';
 import { jsonError, readJson, requireSameOrigin } from '@/db/http';
 import { validateRide } from '@/db/validation';
@@ -8,12 +8,13 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   try {
-    const guest = await getGuest(request);
+    const guest = await requireGuest(request);
     const db = getDatabase();
 
-    const ridesResult = await db
-      .prepare(
-        `SELECT r.id, r.driver_guest_id, g.display_name AS driver_name,
+    const [ridesResult, myRequestsResult, incomingResult] = await Promise.all([
+      db
+        .prepare(
+          `SELECT r.id, r.driver_guest_id, g.display_name AS driver_name,
                   r.direction, r.area_name, r.departure_at, r.seat_capacity,
                   r.notes, r.status, r.created_at, r.updated_at,
                   r.seat_capacity - COALESCE(SUM(CASE WHEN rr.status = 'ACCEPTED' THEN rr.seats_requested ELSE 0 END), 0) AS remaining_seats
@@ -23,19 +24,8 @@ export async function GET(request: Request) {
            WHERE r.status = 'ACTIVE'
            GROUP BY r.id
            ORDER BY r.direction DESC, r.departure_at ASC, r.created_at ASC`,
-      )
-      .all();
-
-    if (!guest) {
-      return NextResponse.json({
-        guest: null,
-        rides: ridesResult.results,
-        myRequests: [],
-        incomingRequests: [],
-      });
-    }
-
-    const [myRequestsResult, incomingResult] = await Promise.all([
+        )
+        .all(),
       db
         .prepare(
           `SELECT rr.id, rr.ride_id, rr.seats_requested, rr.status,
@@ -108,3 +98,4 @@ export async function POST(request: Request) {
     return jsonError(error);
   }
 }
+
