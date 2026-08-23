@@ -72,7 +72,7 @@ export const wedding = {
       },
       carShare: {
         label: '02 · Compartir el viaje',
-        title: 'Compartimos coche.',
+        title: '¿Tienes sitio? ¿Te falta coche?',
         intro: 'Mira las plazas disponibles sin registrarte. Si tienes sitio, publica tu viaje; la ida y la vuelta se organizan por separado.',
         identifyTitle: 'Para ofrecer o pedir plaza',
         identifyText: 'Dinos quién eres para que podáis organizaros. Este dispositivo recordará tus viajes y solicitudes.',
@@ -285,7 +285,7 @@ export const wedding = {
       },
       carShare: {
         label: '02 · Share the journey',
-        title: 'Let’s share cars.',
+        title: 'Got a spare seat? Need a lift?',
         intro: 'Browse available seats without signing in. If you have room, publish your journey; outbound and return trips are organised separately.',
         identifyTitle: 'To offer or request a seat',
         identifyText: 'Tell us who you are so you can organise the details. This device will remember your journeys and requests.',
