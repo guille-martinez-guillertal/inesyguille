@@ -242,10 +242,10 @@ h1 { position: relative; margin: 0; font-size: clamp(5rem, 10.7vw, 11.2rem); lin
 .moodboard-card > p { max-width: 390px; margin: 0; color: var(--ink-soft); line-height: 1.6; }
 .palette { position: absolute; inset: 0 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); height: 150px; }
 .palette-tone { display: block; }
-.tone-1 { background: #72765c; }
+.tone-1 { background: #cfc6b6; }
 .tone-2 { background: #c9b797; }
-.tone-3 { background: #b46f50; }
-.tone-4 { background: #c99a9c; }
+.tone-3 { background: #7b8064; }
+.tone-4 { background: #b98268; }
 .palette-labels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 20px; margin: 28px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line); list-style: none; }
 .palette-labels li { color: #69675f; font-size: .63rem; letter-spacing: .13em; text-transform: uppercase; }
 .moodboard-link { margin-top: 34px; }
