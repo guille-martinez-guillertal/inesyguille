@@ -47,7 +47,7 @@ export const wedding = {
       },
       place: {
         label: '01 · El lugar',
-        title: 'Todo pasa en Finca El Venero.',
+        title: 'Os esperamos en Finca El Venero.',
         description:
           'La finca está junto al río Alberche y a pocos minutos del centro de Navaluenga. Tiene tres casas rurales, jardín y espacio de sobra para pasar el fin de semana juntos.',
         addressLabel: 'Dirección',
@@ -55,10 +55,7 @@ export const wedding = {
         venueWeb: 'Web de la finca',
       },
       arrival: {
-        label: '02 · Cómo llegar',
-        title: 'Cómo llegar sin dar vueltas.',
-        intro:
-          'La finca está dentro de Navaluenga, cerca del puente románico. Abre la ruta en Maps antes de salir y te ahorrarás improvisaciones.',
+        label: 'Cómo llegar',
         routes: [
           {
             title: 'Desde Madrid',
@@ -74,20 +71,20 @@ export const wedding = {
         maps: 'Iniciar ruta',
       },
       carShare: {
-        label: '03 · Compartir el viaje',
-        title: '¿Tienes sitio? ¿Te falta coche?',
-        intro: 'Aquí podéis ofrecer plazas o encontrar a alguien que salga cerca. La ida y la vuelta se organizan por separado, porque los planes cambian después de unas copas.',
-        identifyTitle: 'Primero, dinos quién eres',
-        identifyText: 'Pon tu nombre o el de tu familia. Este dispositivo recordará tus viajes y solicitudes.',
+        label: '02 · Compartir el viaje',
+        title: 'Compartimos coche.',
+        intro: 'Mira las plazas disponibles sin registrarte. Si tienes sitio, publica tu viaje; la ida y la vuelta se organizan por separado.',
+        identifyTitle: 'Para ofrecer o pedir plaza',
+        identifyText: 'Dinos quién eres para que podáis organizaros. Este dispositivo recordará tus viajes y solicitudes.',
         name: 'Nombre o familia',
         namePlaceholder: 'Ana & Pablo',
         phone: 'Teléfono',
         phonePlaceholder: 'Opcional',
-        enter: 'Ver los viajes',
-        privacy: 'Usa zonas aproximadas. La dirección exacta, mejor por privado.',
+        enter: 'Continuar',
+        privacy: 'Importante: usa zonas aproximadas. La dirección exacta, siempre por privado.',
         greeting: 'Hola',
         signOut: 'Cambiar de invitado',
-        offer: 'Ofrecer plazas',
+        offer: 'Ofrecer plaza',
         editRide: 'Editar viaje',
         toWedding: 'Ida a la boda',
         fromWedding: 'Vuelta de la boda',
@@ -132,8 +129,8 @@ export const wedding = {
         requestRejected: 'Solicitud rechazada.',
       },
       agenda: {
-        label: '04 · Agenda',
-        title: 'Qué pasa y cuándo.',
+        label: '03 · Agenda',
+        title: 'Un fin de semana para celebrar juntos.',
         days: [
           {
             day: 'Viernes',
@@ -165,8 +162,8 @@ export const wedding = {
         ],
       },
       dress: {
-        label: '05 · Dress code',
-        title: 'Arreglados, cómodos y sin disfraces.',
+        label: '04 · Dress code',
+        title: 'Elegantes, relajados y cómodos.',
         description:
           'La idea es ir guapos sin ir de gala. Ropa ligera, cómoda y con personalidad: hay jardín, sobremesa y unas cuantas horas de baile.',
         notes: [
@@ -182,7 +179,7 @@ export const wedding = {
         palette: ['Oliva', 'Arena', 'Terracota', 'Rosa empolvado'],
       },
       info: {
-        label: '06 · Información de interés',
+        label: '05 · Información de interés',
         title: 'Lo que conviene saber.',
         cards: [
           {
@@ -193,12 +190,12 @@ export const wedding = {
           {
             number: '02',
             title: 'Entrada y salida',
-            text: 'Check-in el viernes desde las 15:00. El domingo hay salida tardía, así que nadie tendrá que madrugar por una llave.',
+            text: 'Check-in el viernes desde las 15:00. El domingo hay salida tardía para que nos despidamos tranquilamente.',
           },
           {
             number: '03',
             title: 'Desayuno',
-            text: 'Hay desayuno para quienes duermen en la finca. El café del domingo cuenta como servicio esencial.',
+            text: 'El sábado habrá desayuno para quienes duermen en la finca.',
           },
           {
             number: '04',
@@ -213,7 +210,7 @@ export const wedding = {
           {
             number: '06',
             title: 'Tiempo',
-            text: 'A finales de septiembre puede hacer bueno de día y fresco de noche. Mira la previsión y trae una capa ligera.',
+            text: 'A finales de septiembre puede hacer bueno de día y fresco de noche. Recuerda que estamos al pie de la sierra de Gredos. Mira la previsión y trae una capa ligera.',
           },
           {
             number: '07',
@@ -228,7 +225,7 @@ export const wedding = {
         ],
       },
       gift: {
-        label: '07 · Regalo',
+        label: '06 · Regalo',
         title: 'Si queréis hacernos un regalo.',
         message:
           'Con venir y celebrarlo con nosotros es suficiente. Si además queréis hacernos un regalo, os dejamos la cuenta aquí para ponéroslo fácil.',
@@ -263,7 +260,7 @@ export const wedding = {
       },
       place: {
         label: '01 · The place',
-        title: 'Everything happens at Finca El Venero.',
+        title: 'See you at Finca El Venero.',
         description:
           'The estate is by the Alberche River, a few minutes from central Navaluenga. It has three houses, a garden and plenty of room for us to spend the weekend together.',
         addressLabel: 'Address',
@@ -271,10 +268,7 @@ export const wedding = {
         venueWeb: 'Venue website',
       },
       arrival: {
-        label: '02 · Getting there',
-        title: 'How to get there without getting lost.',
-        intro:
-          'The estate is inside Navaluenga, near the Romanesque bridge. Open the route in Maps before leaving and save yourself some improvisation.',
+        label: 'Getting there',
         routes: [
           {
             title: 'From Madrid',
@@ -290,20 +284,20 @@ export const wedding = {
         maps: 'Start route',
       },
       carShare: {
-        label: '03 · Share the journey',
-        title: 'Got a spare seat? Need a lift?',
-        intro: 'Offer a spare seat or find someone leaving near you. Outbound and return trips are separate, because plans tend to change after a few drinks.',
-        identifyTitle: 'First, tell us who you are',
-        identifyText: 'Enter your name or family name. This device will remember your journeys and requests.',
+        label: '02 · Share the journey',
+        title: 'Let’s share cars.',
+        intro: 'Browse available seats without signing in. If you have room, publish your journey; outbound and return trips are organised separately.',
+        identifyTitle: 'To offer or request a seat',
+        identifyText: 'Tell us who you are so you can organise the details. This device will remember your journeys and requests.',
         name: 'Name or family',
         namePlaceholder: 'Ana & Pablo',
         phone: 'Phone',
         phonePlaceholder: 'Optional',
-        enter: 'See the journeys',
-        privacy: 'Use approximate areas. Share exact addresses privately.',
+        enter: 'Continue',
+        privacy: 'Important: use approximate areas. Always share exact addresses privately.',
         greeting: 'Hi',
         signOut: 'Change guest',
-        offer: 'Offer seats',
+        offer: 'Offer a seat',
         editRide: 'Edit journey',
         toWedding: 'Journey to the wedding',
         fromWedding: 'Journey from the wedding',
@@ -348,8 +342,8 @@ export const wedding = {
         requestRejected: 'Request rejected.',
       },
       agenda: {
-        label: '04 · Schedule',
-        title: 'What happens, and when.',
+        label: '03 · Schedule',
+        title: 'A weekend to celebrate together.',
         days: [
           {
             day: 'Friday',
@@ -381,8 +375,8 @@ export const wedding = {
         ],
       },
       dress: {
-        label: '05 · Dress code',
-        title: 'Smart, comfortable, no costumes.',
+        label: '04 · Dress code',
+        title: 'Elegant, relaxed and comfortable.',
         description:
           'The idea is to look great without going full formal. Keep it light, comfortable and personal: there is a garden, a long lunch and several hours of dancing.',
         notes: [
@@ -398,7 +392,7 @@ export const wedding = {
         palette: ['Olive', 'Sand', 'Terracotta', 'Dusty pink'],
       },
       info: {
-        label: '06 · Useful information',
+        label: '05 · Useful information',
         title: 'Things worth knowing.',
         cards: [
           {
@@ -409,12 +403,12 @@ export const wedding = {
           {
             number: '02',
             title: 'Check-in & check-out',
-            text: 'Check-in is Friday from 15:00. Sunday check-out is late, so nobody needs to set an alarm for a key.',
+            text: 'Check-in is Friday from 15:00. Sunday check-out is late so we can say goodbye without rushing.',
           },
           {
             number: '03',
             title: 'Breakfast',
-            text: 'Breakfast is included for everyone staying at the estate. Sunday coffee counts as an essential service.',
+            text: 'Breakfast will be provided on Saturday for everyone staying at the estate.',
           },
           {
             number: '04',
@@ -429,7 +423,7 @@ export const wedding = {
           {
             number: '06',
             title: 'Weather',
-            text: 'Late September can be warm by day and cool at night. Check the forecast and bring a light layer.',
+            text: 'Late September can be warm by day and cool at night. Remember that we are at the foot of the Sierra de Gredos. Check the forecast and bring a light layer.',
           },
           {
             number: '07',
@@ -444,7 +438,7 @@ export const wedding = {
         ],
       },
       gift: {
-        label: '07 · Gift',
+        label: '06 · Gift',
         title: 'If you would like to give us something.',
         message:
           'Coming and celebrating with us is enough. If you would also like to give us a gift, the account is here to make it easy.',

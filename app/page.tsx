@@ -107,28 +107,26 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="arrival section dark-section" id="arrival" aria-labelledby="arrival-title">
-        <SectionHeading label={copy.arrival.label} title={copy.arrival.title} id="arrival-title" />
-        <p className="section-intro">{copy.arrival.intro}</p>
-        <div className="route-list">
-          {copy.arrival.routes.map((route, index) => (
-            <article className="route" key={route.title}>
-              <span className="route-number">0{index + 1}</span>
-              <h3>{route.title}</h3>
-              <p>{route.text}</p>
-            </article>
-          ))}
-        </div>
-        <div className="parking-strip">
-          <div>
-            <p className="micro-label">{copy.arrival.parkingTitle}</p>
-            <p>{copy.arrival.parkingText}</p>
+        <div className="arrival-details" aria-label={copy.arrival.label}>
+          <p className="micro-label">{copy.arrival.label}</p>
+          <div className="route-list">
+            {copy.arrival.routes.map((route, index) => (
+              <article className="route" key={route.title}>
+                <span className="route-number">0{index + 1}</span>
+                <h3>{route.title}</h3>
+                <p>{route.text}</p>
+              </article>
+            ))}
           </div>
-          <a className="button light-button" href={wedding.mapsUrl} target="_blank" rel="noopener noreferrer">
-            {copy.arrival.maps}<ExternalArrow />
-          </a>
+          <div className="parking-strip">
+            <div>
+              <p className="micro-label">{copy.arrival.parkingTitle}</p>
+              <p>{copy.arrival.parkingText}</p>
+            </div>
+            <a className="button primary-button" href={wedding.mapsUrl} target="_blank" rel="noopener noreferrer">
+              {copy.arrival.maps}<ExternalArrow />
+            </a>
+          </div>
         </div>
       </section>
 
