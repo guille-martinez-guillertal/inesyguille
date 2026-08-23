@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "inesyguille",
+  "main": "dist/server/index.js",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "directory": "dist/client"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wedding-guines-rides",
+      "database_id": "c4d05325-0f1d-41bc-8049-daa854b71b38"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import CarSharing from './CarSharing';
 import { Language, wedding } from './content';
 
 const languages: Language[] = ['es', 'en'];
@@ -44,6 +45,7 @@ export default function Home() {
         </a>
         <div className="nav-links">
           <a href="#place">{copy.nav.place}</a>
+          <a href="#rides">{copy.nav.rides}</a>
           <a href="#agenda">{copy.nav.agenda}</a>
           <a href="#dress">{copy.nav.info}</a>
           <a href="#gift">{copy.nav.gift}</a>
@@ -129,6 +131,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <CarSharing language={language} />
 
       <section className="agenda section" id="agenda" aria-labelledby="agenda-title">
         <SectionHeading label={copy.agenda.label} title={copy.agenda.title} id="agenda-title" />

@@ -31,8 +31,24 @@ npx tsc --noEmit
 
 - Vinext / React
 - TypeScript
-- Static, responsive one-page experience
-- Cloudflare Workers deployment
-- No backend, database, authentication or tracking
+- Responsive one-page experience
+- Cloudflare Worker for the website and `/api/*` routes
+- Cloudflare D1 for guest identities, rides and seat requests
+- Private, server-validated guest tokens stored in secure cookies
+- No third-party backend, authentication provider or tracking
+
+## Car sharing
+
+Guests identify themselves once by name, then they can offer independent outbound or return journeys, request seats, edit or cancel their own rides, and accept or reject passenger requests. Only approximate areas are visible. Phone numbers are optional and are only returned to the participants after a request is accepted.
+
+The database schema lives in [`db/schema.ts`](db/schema.ts) and generated migrations are stored in [`drizzle/`](drizzle/).
+
+```bash
+npm run db:generate
+npm run build
+npm run deploy
+```
+
+The deployment continues to use the existing `inesyguille.guillertal.workers.dev` Worker and the free `wedding-guines-rides` D1 database.
 
 The invitation artwork remains outside this repository and is not modified or redistributed by the site.

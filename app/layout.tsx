@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Inés & Guille · 26.09.2026',
   description:
     'Toda la información para acompañarnos en nuestra boda en Finca El Venero, Navaluenga.',
+  referrer: 'no-referrer',
   icons: { icon: '/favicon.png' },
   openGraph: {
     type: 'website',
