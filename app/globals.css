@@ -58,7 +58,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline
   display: grid;
   min-height: 100svh;
   padding: max(118px, 13vh) 5vw 40px;
-  background: var(--ivory);
+  background-color: var(--ivory);
+  background-image:
+    linear-gradient(90deg, rgba(238,230,213,.8) 0%, rgba(238,230,213,.58) 48%, rgba(238,230,213,.82) 100%),
+    url('/invitation-hero.jpg');
+  background-position: center 58%;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   isolation: isolate;
 }
@@ -87,6 +93,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline
 }
 .shadow-one { left: -12%; bottom: -12%; }
 .shadow-two { right: -26%; top: 18%; transform: rotate(42deg) scale(.85); opacity: .1; }
+.hero .sun, .hero .botanical-shadow { display: none; }
 .hero-copy { align-self: center; justify-self: end; width: min(82vw, 1120px); }
 .eyebrow, .section-label, .micro-label { font-size: .66rem; letter-spacing: .21em; text-transform: uppercase; }
 .eyebrow, .section-label { margin: 0 0 26px; }
@@ -271,7 +278,15 @@ footer { padding: clamp(90px, 12vw, 160px) 5vw 38px; background: var(--ivory); }
 @media (max-width: 700px) {
   html { scroll-padding-top: 62px; }
   .nav { min-height: 62px; padding: 0 20px; }
-  .hero { min-height: 100svh; padding: 104px 22px 28px; }
+  .hero {
+    min-height: 100svh;
+    padding: 104px 22px 28px;
+    background-image:
+      linear-gradient(rgba(238,230,213,.76), rgba(238,230,213,.7)),
+      url('/invitation-hero.jpg');
+    background-position: center 62%;
+    background-size: auto 180%;
+  }
   .hero-copy { align-self: center; justify-self: stretch; width: 100%; }
   h1 { font-size: clamp(4.5rem, 21vw, 7rem); line-height: .79; }
   .hero-name small { display: block; margin: .2em 0 .9em .45em; font-size: .075em; }
