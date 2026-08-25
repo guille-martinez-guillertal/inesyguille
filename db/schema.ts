@@ -64,7 +64,9 @@ export const rideRequests = sqliteTable(
     updatedAt: text('updated_at').notNull(),
   },
   (table) => [
-    uniqueIndex('idx_ride_requests_ride_guest').on(table.rideId, table.guestId),
+    uniqueIndex('idx_ride_requests_pending_ride_guest')
+      .on(table.rideId, table.guestId)
+      .where(sql`${table.status} = 'REQUESTED'`),
     index('idx_ride_requests_ride_status').on(table.rideId, table.status),
     index('idx_ride_requests_guest_status').on(table.guestId, table.status),
     check('ride_requests_seats_range', sql`${table.seatsRequested} BETWEEN 1 AND 8`),

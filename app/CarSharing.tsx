@@ -123,8 +123,12 @@ export default function CarSharing({ language }: { language: Language }) {
     () => (dashboard?.rides ?? []).filter((ride) => ride.direction === direction),
     [dashboard, direction],
   );
-  const activeRequestRideIds = useMemo(
-    () => new Set((dashboard?.myRequests ?? []).map((request) => request.ride_id)),
+  const pendingRequestRideIds = useMemo(
+    () => new Set(
+      (dashboard?.myRequests ?? [])
+        .filter((request) => request.status === 'REQUESTED')
+        .map((request) => request.ride_id),
+    ),
     [dashboard],
   );
 
@@ -336,7 +340,7 @@ export default function CarSharing({ language }: { language: Language }) {
                         <button className="text-action" type="button" onClick={() => beginEdit(ride)}>{copy.edit}</button>
                         <button className="text-action danger" type="button" disabled={busy} onClick={() => { if (confirm(copy.confirmCancelRide)) void runAction(() => requestJson(`/api/rides/${ride.id}`, { method: 'DELETE' }), copy.rideCancelled); }}>{copy.cancelRide}</button>
                       </div>
-                    ) : remaining > 0 && !activeRequestRideIds.has(ride.id) ? (
+                    ) : remaining > 0 && !pendingRequestRideIds.has(ride.id) ? (
                       <div className="request-row">
                         <label><span>{copy.requestSeats}</span><select value={requestSeats[ride.id] ?? 1} onChange={(event) => setRequestSeats((current) => ({ ...current, [ride.id]: Number(event.target.value) }))}>{Array.from({ length: remaining }, (_, index) => <option key={index + 1} value={index + 1}>{index + 1}</option>)}</select></label>
                         <button className="button compact-button" type="button" disabled={busy} onClick={() => void runAction(() => requestJson(`/api/rides/${ride.id}/requests`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ seatsRequested: requestSeats[ride.id] ?? 1 }) }), copy.requestSent)}>{copy.request}</button>
@@ -379,4 +383,3 @@ export default function CarSharing({ language }: { language: Language }) {
     </section>
   );
 }
-

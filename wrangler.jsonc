@@ -12,7 +12,8 @@
     {
       "binding": "DB",
       "database_name": "wedding-guines-rides",
-      "database_id": "c4d05325-0f1d-41bc-8049-daa854b71b38"
+      "database_id": "c4d05325-0f1d-41bc-8049-daa854b71b38",
+      "migrations_dir": "drizzle"
     }
   ],
   "observability": {

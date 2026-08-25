@@ -1,0 +1,2 @@
+DROP INDEX `idx_ride_requests_ride_guest`;--> statement-breakpoint
+CREATE UNIQUE INDEX `idx_ride_requests_pending_ride_guest` ON `ride_requests` (`ride_id`,`guest_id`) WHERE "ride_requests"."status" = 'REQUESTED';

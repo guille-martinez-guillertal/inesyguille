@@ -36,26 +36,22 @@ export async function POST(request: Request, context: RouteContext) {
       throw new ApiError(409, 'NOT_ENOUGH_SEATS', 'There are not enough seats available.');
     }
 
-    const existing = await db
-      .prepare('SELECT id, status FROM ride_requests WHERE ride_id = ?1 AND guest_id = ?2')
+    const existingPending = await db
+      .prepare(
+        `SELECT id
+         FROM ride_requests
+         WHERE ride_id = ?1 AND guest_id = ?2 AND status = 'REQUESTED'
+         LIMIT 1`,
+      )
       .bind(rideId, guest.id)
-      .first<{ id: string; status: string }>();
+      .first<{ id: string }>();
     const now = new Date().toISOString();
 
-    if (existing && (existing.status === 'REQUESTED' || existing.status === 'ACCEPTED')) {
-      throw new ApiError(409, 'REQUEST_EXISTS', 'You already have a request for this ride.');
+    if (existingPending) {
+      throw new ApiError(409, 'REQUEST_EXISTS', 'You already have a pending request for this ride.');
     }
 
-    if (existing) {
-      await db
-        .prepare(
-          `UPDATE ride_requests
-           SET seats_requested = ?1, status = 'REQUESTED', updated_at = ?2
-           WHERE id = ?3`,
-        )
-        .bind(seats, now, existing.id)
-        .run();
-    } else {
+    try {
       await db
         .prepare(
           `INSERT INTO ride_requests
@@ -64,6 +60,11 @@ export async function POST(request: Request, context: RouteContext) {
         )
         .bind(crypto.randomUUID(), rideId, guest.id, seats, now)
         .run();
+    } catch (error) {
+      if (error instanceof Error && error.message.includes('UNIQUE constraint failed')) {
+        throw new ApiError(409, 'REQUEST_EXISTS', 'You already have a pending request for this ride.');
+      }
+      throw error;
     }
 
     return NextResponse.json({ ok: true }, { status: 201 });
