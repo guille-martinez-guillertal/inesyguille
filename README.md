@@ -39,7 +39,7 @@ npx tsc --noEmit
 
 ## Car sharing
 
-Guests identify themselves once by name, then they can offer independent outbound or return journeys, request seats, edit or cancel their own rides, and accept or reject passenger requests. Only approximate areas are visible. Phone numbers are optional and are only returned to the participants after a request is accepted.
+Guests identify themselves with a unique name and four-digit PIN, then they can offer independent outbound or return journeys, request seats, edit or cancel their own rides, and accept or reject passenger requests. The same name and PIN restore the same account on any device. Only approximate areas are visible. Phone numbers are optional and are only returned to the participants after a request is accepted.
 
 The database schema lives in [`db/schema.ts`](db/schema.ts) and generated migrations are stored in [`drizzle/`](drizzle/).
 

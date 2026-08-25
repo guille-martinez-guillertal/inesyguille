@@ -6,13 +6,33 @@ export const guests = sqliteTable(
   {
     id: text('id').primaryKey(),
     displayName: text('display_name').notNull(),
-    tokenHash: text('token_hash').notNull(),
+    displayNameKey: text('display_name_key').notNull(),
+    pinHash: text('pin_hash').notNull(),
     phone: text('phone'),
+    failedPinAttempts: integer('failed_pin_attempts').notNull().default(0),
+    pinLockedUntil: text('pin_locked_until'),
     createdAt: text('created_at').notNull(),
   },
   (table) => [
-    uniqueIndex('idx_guests_token_hash').on(table.tokenHash),
+    uniqueIndex('idx_guests_display_name_key').on(table.displayNameKey),
     check('guests_display_name_length', sql`length(${table.displayName}) BETWEEN 2 AND 80`),
+    check('guests_pin_attempts_nonnegative', sql`${table.failedPinAttempts} >= 0`),
+  ],
+);
+
+export const guestSessions = sqliteTable(
+  'guest_sessions',
+  {
+    id: text('id').primaryKey(),
+    guestId: text('guest_id')
+      .notNull()
+      .references(() => guests.id, { onDelete: 'cascade' }),
+    tokenHash: text('token_hash').notNull(),
+    createdAt: text('created_at').notNull(),
+  },
+  (table) => [
+    uniqueIndex('idx_guest_sessions_token_hash').on(table.tokenHash),
+    index('idx_guest_sessions_guest_id').on(table.guestId),
   ],
 );
 

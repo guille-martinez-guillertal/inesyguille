@@ -14,7 +14,10 @@ function cleanText(value: unknown, field: string, min: number, max: number) {
 export function validateIdentity(body: Record<string, unknown>) {
   const displayName = cleanText(body.displayName, 'Name', 2, 80);
   const phone = body.phone ? cleanText(body.phone, 'Phone', 5, 30) : null;
-  return { displayName, phone };
+  if (typeof body.pin !== 'string' || !/^\d{4}$/.test(body.pin)) {
+    throw new ApiError(400, 'INVALID_INPUT', 'PIN must contain exactly four digits.');
+  }
+  return { displayName, phone, pin: body.pin };
 }
 
 export function validateRide(body: Record<string, unknown>) {

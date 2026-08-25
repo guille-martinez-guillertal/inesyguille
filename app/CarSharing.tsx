@@ -144,6 +144,7 @@ export default function CarSharing({ language }: { language: Language }) {
         body: JSON.stringify({
           displayName: form.get('displayName'),
           phone: form.get('phone') || null,
+          pin: form.get('pin'),
         }),
       });
       setGuest(data.guest);
@@ -266,6 +267,21 @@ export default function CarSharing({ language }: { language: Language }) {
             <label>
               <span>{copy.phone}</span>
               <input name="phone" type="tel" placeholder={copy.phonePlaceholder} maxLength={30} />
+            </label>
+            <label>
+              <span>{copy.pin}</span>
+              <input
+                name="pin"
+                type="password"
+                inputMode="numeric"
+                autoComplete="current-password"
+                placeholder={copy.pinPlaceholder}
+                pattern="[0-9]{4}"
+                minLength={4}
+                maxLength={4}
+                required
+              />
+              <small>{copy.pinHelp}</small>
             </label>
             <button className="button primary-button" type="submit" disabled={busy}>{copy.enter}</button>
           </form>

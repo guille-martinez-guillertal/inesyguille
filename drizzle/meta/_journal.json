@@ -15,6 +15,13 @@
       "when": 1787642264912,
       "tag": "0001_keen_orphan",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1787644149058,
+      "tag": "0002_funny_rage",
+      "breakpoints": true
     }
   ]
 }
