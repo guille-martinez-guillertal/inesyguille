@@ -11,6 +11,20 @@ export const wedding = {
     short: 'Inés & Guille',
   },
   dateISO: '2026-09-26',
+  calendar: {
+    // Explicit offsets keep the saved event independent of the guest's time zone.
+    start: '2026-09-25T19:00:00+02:00',
+    end: '2026-09-27T16:00:00+02:00',
+    timeZone: 'Europe/Madrid',
+    website: 'https://inesyguille.guillertal.workers.dev/',
+    uid: 'wedding-weekend-20260925@inesyguille.guillertal.workers.dev',
+    updatedAt: '2026-08-27T00:00:00Z',
+    title: { es: 'Boda de Inés & Guille', en: 'Inés & Guille’s wedding' },
+    closing: {
+      es: 'Domingo, 27 septiembre · Despedida y fin del fin de semana a las 16:00.',
+      en: 'Sunday, 27 September · Goodbyes and end of the weekend at 16:00.',
+    },
+  },
   venue: 'Finca El Venero',
   address: 'C. el Venero, s/n, 05100 Navaluenga, Ávila',
   mapsUrl:
@@ -134,6 +148,14 @@ export const wedding = {
       agenda: {
         label: '03 · Agenda',
         title: 'Un fin de semana para celebrar juntos.',
+        calendar: {
+          title: 'Guárdate el fin de semana.',
+          timeZone: 'Horario de España peninsular (Europe/Madrid).',
+          hint: 'Elige tu calendario y confirma para guardar. Incluye la agenda, la ubicación y la web.',
+          providers: { google: 'Google', outlook: 'Outlook', other: 'Otros' },
+          downloadHint: 'Google y Outlook abren el evento directamente. Otros descarga un archivo .ics para Apple Calendar y otros calendarios. Es una copia: consulta la web si hay cambios.',
+          newTab: 'se abre en otra pestaña',
+        },
         days: [
           {
             day: 'Viernes',
@@ -349,6 +371,14 @@ export const wedding = {
       agenda: {
         label: '03 · Schedule',
         title: 'A weekend to celebrate together.',
+        calendar: {
+          title: 'Save the weekend.',
+          timeZone: 'Mainland Spain time (Europe/Madrid).',
+          hint: 'Choose your calendar and confirm to save. Includes the schedule, location and website.',
+          providers: { google: 'Google', outlook: 'Outlook', other: 'Others' },
+          downloadHint: 'Google and Outlook open the event directly. Others downloads an .ics file for Apple Calendar and other calendars. This is a copy: check the website for updates.',
+          newTab: 'opens in a new tab',
+        },
         days: [
           {
             day: 'Friday',

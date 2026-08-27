@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import CarSharing from './CarSharing';
 import { Language, wedding } from './content';
+import { calendarDateRange, calendarLinks, getCalendarEvent } from '../lib/calendar';
 
 const languages: Language[] = ['es', 'en'];
 
@@ -14,6 +15,7 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>('es');
   const [copied, setCopied] = useState(false);
   const copy = wedding.content[language];
+  const calendarEvent = getCalendarEvent(wedding, language);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -154,6 +156,24 @@ export default function Home() {
               </ol>
             </article>
           ))}
+        </div>
+        <div className="calendar-save" aria-labelledby="calendar-title">
+          <h3 id="calendar-title">{copy.agenda.calendar.title}</h3>
+          <p className="calendar-range">{calendarDateRange(calendarEvent, language)}</p>
+          <p className="calendar-timezone">{copy.agenda.calendar.timeZone}</p>
+          <p>{copy.agenda.calendar.hint}</p>
+          <div className="calendar-options">
+            {calendarLinks(calendarEvent, language).map((option) => (
+              <a key={option.id} className="button calendar-button" href={option.href}
+                target={option.download ? undefined : '_blank'} rel={option.download ? undefined : 'noopener noreferrer'}
+                download={option.download ? `ines-y-guille-${language}.ics` : undefined}>
+                {copy.agenda.calendar.providers[option.id]}
+                {option.download ? <span aria-hidden="true">↓</span> : <ExternalArrow />}
+                <span className="sr-only"> ({option.download ? '.ics' : copy.agenda.calendar.newTab})</span>
+              </a>
+            ))}
+          </div>
+          <p className="calendar-help">{copy.agenda.calendar.downloadHint}</p>
         </div>
       </section>
 

@@ -229,6 +229,15 @@ h1 { position: relative; margin: 0; font-size: clamp(5rem, 10.7vw, 11.2rem); lin
 .timeline-day time { color: #756d5b; font-family: var(--font-display), Georgia, serif; font-size: 1.15rem; }
 .timeline-day h4 { margin: 0 0 9px; font-family: var(--font-display), Georgia, serif; font-size: 1.45rem; font-weight: 400; }
 .timeline-day li p { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+.calendar-save { margin: 64px 0 0 24%; padding-top: 36px; border-top: 1px solid var(--line); }
+.calendar-save h3 { margin: 0 0 20px; font: 400 clamp(1.8rem, 3vw, 2.6rem)/1.15 var(--font-display), Georgia, serif; }
+.calendar-save p { color: var(--ink-soft); line-height: 1.6; }
+.calendar-save .calendar-range { margin-bottom: 4px; color: var(--ink); }
+.calendar-timezone { margin-top: 0; font-size: .8rem; }
+.calendar-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.calendar-options .calendar-button { min-width: 0; min-height: 52px; padding: 16px 20px; justify-content: space-between; border: 1px solid var(--line); color: var(--ink); letter-spacing: .06em; }
+.calendar-button:hover { background: var(--ink); color: var(--paper); }
+.calendar-save .calendar-help { margin: 18px 0 0; font-size: .8rem; }
 
 .warm-section { z-index: 0; background: #e3e2d4; overflow: hidden; isolation: isolate; }
 .dress-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10vw; margin: clamp(70px, 9vw, 120px) 0 0 24%; }
@@ -281,7 +290,7 @@ footer { padding: clamp(90px, 12vw, 160px) 5vw 38px; background: var(--ivory); }
     background-size: auto 180%;
   }
   .section-heading { grid-template-columns: minmax(130px, .8fr) 3fr; }
-  .place-details, .arrival-details, .section-intro, .timeline, .dress-grid, .gift-grid, .car-share-intro, .ride-loading, .identity-card, .car-share-app, .ride-notice { margin-left: 18%; }
+  .place-details, .arrival-details, .section-intro, .timeline, .calendar-save, .dress-grid, .gift-grid, .car-share-intro, .ride-loading, .identity-card, .car-share-app, .ride-notice { margin-left: 18%; }
   .ride-card-grid, .ride-management-grid { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -318,7 +327,7 @@ footer { padding: clamp(90px, 12vw, 160px) 5vw 38px; background: var(--ivory); }
   .section { padding: 92px 22px; }
   .section-heading { display: block; }
   .section-heading h2 { font-size: clamp(3.1rem, 14.5vw, 5rem); }
-  .place-details, .arrival-details, .section-intro, .timeline, .dress-grid, .gift-grid, .car-share-intro, .ride-loading, .identity-card, .car-share-app, .ride-notice { margin-left: 0; }
+  .place-details, .arrival-details, .section-intro, .timeline, .calendar-save, .dress-grid, .gift-grid, .car-share-intro, .ride-loading, .identity-card, .car-share-app, .ride-notice { margin-left: 0; }
   .place-details { grid-template-columns: 1fr; gap: 48px; margin-top: 66px; }
   .link-row { align-items: flex-start; flex-direction: column; gap: 0; }
   .section-intro { margin-top: 54px; }
@@ -362,6 +371,10 @@ footer { padding: clamp(90px, 12vw, 160px) 5vw 38px; background: var(--ivory); }
   footer { padding: 100px 22px 28px; }
   .footer-closing { margin: 0 0 80px; }
   .footer-meta { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 450px) {
+  .calendar-options { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

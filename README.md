@@ -19,6 +19,24 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All guest-facing wedding details and bilingual copy live in [`app/content.ts`](app/content.ts). This includes the schedule, venue, dress code, practical information and gift details.
 
+## Save the date
+
+The end of the agenda offers three buttons: Google, Outlook and Others. Google
+and Outlook open prefilled events (Outlook uses Outlook.com); only Others downloads
+an ICS file, compatible with personal/work Outlook, Apple Calendar and other calendar apps. One event covers the
+whole weekend. The start/end, Spain time zone, public URL and stable event UID
+are in `app/content.ts`'s `calendar` object; descriptions reuse the bilingual agenda.
+Keep the explicit start/end UTC offsets aligned with `Europe/Madrid` when editing dates.
+The read-only `/api/calendar?lang=es` (or `en`) route generates an RFC 5545 file,
+without accessing the database, collecting guest details or exporting bank data.
+Guests confirm the event in their own calendar; saved copies do not auto-update.
+
+Calendar regression checks (Node.js 22.13+):
+
+```bash
+node --experimental-strip-types --test tests/calendar.test.mjs
+```
+
 ## Validation
 
 ```bash
