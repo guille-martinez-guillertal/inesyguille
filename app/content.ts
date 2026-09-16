@@ -32,7 +32,7 @@ export const wedding = {
   venueUrl: 'https://fincaelvenero.com/',
   pinterestUrl: 'https://pin.it/uHrJXg56k',
   bank: {
-    holder: 'Guillermo Martinez Fernandez',
+    holder: 'Guillermo Martinez Fernandez / Ines Camara Calzas',
     iban: 'ES60 1465 0100 91 1775535838',
   },
   contact: {
@@ -214,7 +214,7 @@ export const wedding = {
           {
             number: '02',
             title: 'Entrada y salida',
-            text: 'Check-in el viernes desde las 15:00. El domingo hay salida tardía para que nos despidamos tranquilamente.',
+            text: 'Para quienes duermen en la finca: check-in el viernes desde las 15:00 y check-out el domingo a las 16:00.',
           },
           {
             number: '03',
@@ -437,7 +437,7 @@ export const wedding = {
           {
             number: '02',
             title: 'Check-in & check-out',
-            text: 'Check-in is Friday from 15:00. Sunday check-out is late so we can say goodbye without rushing.',
+            text: 'For guests staying at the estate: check-in is Friday from 15:00 and check-out is Sunday at 16:00.',
           },
           {
             number: '03',
